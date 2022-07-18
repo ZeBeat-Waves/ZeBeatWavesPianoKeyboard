@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Piano keyboard</title>
+<script src="./keyboard.js"></script>
+<script src="./keysList.js"></script>
+<link rel="stylesheet" href="./keyboard.css">
+</head>
+<body>
+
+    <div class="keyboardPianoModule">
+        <div class="octaveControls">
+            <Button class="ocButton" id="octaveUp" onclick="octUp()">UP</Button>
+            <h1  class="octaveNumber" id="octaveLabel">4</h1>
+            <Button class="ocButton" id="octaveDown" onclick="octDown()">DOWN</Button>
+        </div>
+        <svg class="keyboardPiano" id="keyboard"></svg>
+<script>createKeyboard();
+activeKeys();</script>
+    </div>
+
+</body>
+</html>

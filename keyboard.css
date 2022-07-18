@@ -1,0 +1,51 @@
+.keyboardPianoModule{
+    overflow: hidden;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    margin: 5px;
+}
+
+.ocButton{
+    width: 55px;
+    height: 26px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.octaveNumber{
+    width: 55px;
+    line-height: 20px;
+    font-size: 18px;
+}
+
+.octaveControls{
+    width: 55px;
+    display: inline-block;
+}
+
+.keyboardPiano{
+    display: inline-block;
+}
+
+.keysWhite{
+    fill: #ffffff;
+    stroke: #000000;
+}
+
+.keysWhite:hover{
+    fill: #243160;
+}
+
+.keysWhite:active{
+    fill: #d9114a;
+}
+
+.keysBlack{
+    fill:  #000000;
+    stroke: #ffffff;
+}
+
+.keysBlack:hover{
+    fill: #243160;
+}
