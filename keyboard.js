@@ -1,5 +1,6 @@
 var svgns = "http://www.w3.org/2000/svg";
 var octaveKeyboardGlobal = 4;
+var inputNoteGlobal = null;
 
 function createKeyWhite(position, id)
 {
@@ -69,61 +70,85 @@ document.addEventListener('keydown', function(event) {
             var key = document.getElementById('C' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             document.getElementById('activeNote').innerHTML = key.id;
+            inputNoteGlobal = key.id;
+            inputNoteShow();
             break;
         case "KeyZ":
             octDown();
@@ -195,6 +220,10 @@ document.addEventListener('keydown', function(event) {
 
   function octShow(label){
     document.getElementById(label).innerHTML = octaveKeyboardGlobal;
+  }
+
+  function inputNoteShow(){
+    document.getElementById('inputNote').innerHTML = inputNoteGlobal;
   }
 
   function octUp(){

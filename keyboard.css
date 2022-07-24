@@ -49,3 +49,10 @@
 .keysBlack:hover{
     fill: #243160;
 }
+
+#activeKeyboard{
+    width: 35px;
+    height: 35px;
+    background: blue;
+    border-radius: 50%;
+}
