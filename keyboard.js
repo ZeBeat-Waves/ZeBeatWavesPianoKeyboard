@@ -72,6 +72,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
@@ -79,6 +80,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
@@ -86,6 +88,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
@@ -93,6 +96,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
@@ -100,6 +104,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
@@ -107,6 +112,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
@@ -114,6 +120,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
@@ -121,6 +128,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
@@ -128,6 +136,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
@@ -135,6 +144,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
@@ -142,6 +152,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
@@ -149,6 +160,7 @@ document.addEventListener('keydown', function(event) {
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
+            actKbOn(key.id);
             break;
         case "KeyZ":
             octDown();
@@ -167,50 +179,62 @@ document.addEventListener('keydown', function(event) {
         case "KeyA":
             var key = document.getElementById('C' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
             key.style.fill = '#000000';
+            actKbOff(key.id);
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
             key.style.fill = '#000000';
+            actKbOff(key.id);
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
             key.style.fill = '#000000';
+            actKbOff(key.id);
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
             key.style.fill = '#000000';
+            actKbOff(key.id);
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
             key.style.fill = '#000000';
+            actKbOff(key.id);
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
             key.style.fill = '#ffffff';
+            actKbOff(key.id);
             break;
     
         default:
@@ -234,4 +258,14 @@ document.addEventListener('keydown', function(event) {
   function octDown(){
     octaveKeyboardGlobal -= 1;
     octShow("octaveLabel");
+  }
+
+  function actKbOn(noteId){
+    var note = document.getElementById('activeKeyboard');
+    note.style.background = "green";
+  }
+
+  function actKbOff(noteId){
+    var note = document.getElementById('activeKeyboard');
+    note.style.background = "blue";
   }
