@@ -113,6 +113,12 @@ document.addEventListener('keydown', function(event) {
             var key = document.getElementById('B' + octaveKeyboardGlobal);
             key.style.fill = '#d9114a';
             break;
+        case "KeyZ":
+            octDown();
+            break;
+        case "KeyX":
+            octUp();
+            break;
     
         default:
             break;
@@ -187,4 +193,8 @@ document.addEventListener('keydown', function(event) {
   function octDown(){
     octaveKeyboardGlobal -= 1;
     octShow("octaveLabel");
+  }
+
+  function noteQueue(){
+    
   }
