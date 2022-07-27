@@ -292,3 +292,10 @@ document.addEventListener('keydown', function(event) {
     notesQueueGlobal.push(document.getElementById(keyId).innerHTML = keyId);
     console.log(notesQueueGlobal);
   }
+
+  //let timerId = setInterval(() => deleteNotesQueue(), 2000);
+
+  function deleteNotesQueue(){
+    notesQueueGlobal.splice(0);
+    console.log(notesQueueGlobal);
+  };
