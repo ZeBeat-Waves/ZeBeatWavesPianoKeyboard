@@ -7,10 +7,22 @@
 }
 
 .ocButton{
+    background: none;
     width: 55px;
     height: 26px;
     display: inline-block;
     font-size: 12px;
+    border: 1px #cdcdcd solid;
+    border-radius: 5px;
+    transition: background 0.3ms;
+}
+
+.ocButton:hover{
+    background: #cdcdcd;
+}
+
+.ocButton:active{
+    background: #808080;
 }
 
 .octaveNumber{
@@ -51,8 +63,13 @@
 }
 
 #activeKeyboard{
-    width: 35px;
-    height: 35px;
-    background: blue;
+    width: 15px;
+    height: 15px;
+    background: #243160;
     border-radius: 50%;
+}
+
+.text{
+    font-family: 'Roboto';
+    font-size: 16px;
 }

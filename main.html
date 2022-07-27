@@ -8,19 +8,14 @@
 </head>
 <body>
 
-    <h1>Input note</h1>
-    <h1 id="inputNote">test</h1>
-    <select name="" id="" size="10">
-        <option value="test">test</option>
-        <option value="test1">test1</option>
-        <option value="test2">test2</option>
-    </select>
+    <div class="text">Input note</div>
+    <div class="text" id="inputNote">inputNoteGlobal</div>
     <div class="keyboardPianoModule">
         <div class="octaveControls">
             <Button class="ocButton" id="octaveUp" onclick="octUp()">UP</Button>
-            <h1 class="octaveNumber" id="octaveLabel">4</h1>
+            <div class="octaveNumber text" id="octaveLabel">4</div>
             <Button class="ocButton" id="octaveDown" onclick="octDown()">DOWN</Button>
-            <h1 id="activeNote" class="activeNote">Note</h1>
+            <div id="activeNote" class="activeNote text">Note</div>
         </div>
         <svg class="keyboardPiano" id="keyboard"></svg>
         <div id="activeKeyboard"></div>

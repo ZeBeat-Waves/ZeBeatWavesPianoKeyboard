@@ -1,4 +1,5 @@
 var svgns = "http://www.w3.org/2000/svg";
+//let timerId = setInterval(() => deleteNotesQueue(), 1000);
 var octaveKeyboardGlobal = 4;
 var inputNoteGlobal = null;
 var notesQueueGlobal = [];
@@ -280,12 +281,12 @@ document.addEventListener('keydown', function(event) {
 
   function actKbOn(noteId){
     var note = document.getElementById('activeKeyboard');
-    note.style.background = "green";
+    note.style.background = "#00ad6f";
   }
 
   function actKbOff(noteId){
     var note = document.getElementById('activeKeyboard');
-    note.style.background = "blue";
+    note.style.background = "#243160";
   }
 
   function addNotesQueue(keyId){
@@ -293,9 +294,7 @@ document.addEventListener('keydown', function(event) {
     console.log(notesQueueGlobal);
   }
 
-  //let timerId = setInterval(() => deleteNotesQueue(), 2000);
-
   function deleteNotesQueue(){
-    notesQueueGlobal.splice(0);
+    notesQueueGlobal.splice(0, 1);
     console.log(notesQueueGlobal);
   };
