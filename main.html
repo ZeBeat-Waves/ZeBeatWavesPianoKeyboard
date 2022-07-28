@@ -16,11 +16,13 @@
             <div class="octaveNumber text" id="octaveLabel">4</div>
             <Button class="ocButton" id="octaveDown" onclick="octDown()">DOWN</Button>
             <div id="activeNote" class="activeNote text">Note</div>
+            <div id="activeKeyboard"></div>
         </div>
         <svg class="keyboardPiano" id="keyboard"></svg>
-        <div id="activeKeyboard"></div>
-<script>createKeyboard();
-activeKeys();</script>
+        <script>
+        createKeyboard();
+        activeKeys();
+        </script>
     </div>
 
 </body>

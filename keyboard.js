@@ -1,8 +1,9 @@
 var svgns = "http://www.w3.org/2000/svg";
-//let timerId = setInterval(() => deleteNotesQueue(), 1000);
+let timerId;
 var octaveKeyboardGlobal = 4;
 var inputNoteGlobal = null;
 var notesQueueGlobal = [];
+var timertrigger = 0;
 
 function createKeyWhite(position, id)
 {
@@ -292,9 +293,19 @@ document.addEventListener('keydown', function(event) {
   function addNotesQueue(keyId){
     notesQueueGlobal.push(document.getElementById(keyId).innerHTML = keyId);
     console.log(notesQueueGlobal);
+    timertrigger = 1;
+    //console.log(notesQueueGlobal.length);
+    if (timertrigger == 1) {
+        timerId = setInterval(() => deleteNotesQueue(), 1000);
+    }
   }
 
   function deleteNotesQueue(){
     notesQueueGlobal.splice(0, 1);
     console.log(notesQueueGlobal);
-  };
+    //console.log(notesQueueGlobal.length);
+    if (notesQueueGlobal[0] == null) {
+        timertrigger = 0;
+        cleclearInterval(timerId);
+    }
+  }
