@@ -1,9 +1,19 @@
+$(document).ready(function () {
+
+    $("#keyboard").mousemove(function(e) {
+        mouseId = $(e.target).attr("id");
+        console.log(mouseId);
+    })
+
+  });
+
 var svgns = "http://www.w3.org/2000/svg";
 let timerId;
 var octaveKeyboardGlobal = 4;
 var inputNoteGlobal = null;
 var notesQueueGlobal = [];
 var timertrigger = 0;
+var mouseId = 0;
 
 function createKeyWhite(position, id)
 {
@@ -76,7 +86,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
@@ -85,7 +94,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
@@ -94,7 +102,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
@@ -103,7 +110,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
@@ -112,7 +118,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
@@ -121,7 +126,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
@@ -130,7 +134,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
@@ -139,7 +142,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
@@ -148,7 +150,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
@@ -157,7 +158,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
@@ -166,7 +166,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
@@ -175,13 +174,6 @@ document.addEventListener('keydown', function(event) {
             inputNoteGlobal = key.id;
             inputNoteShow();
             actKbOn(key.id);
-            addNotesQueue(key.id)
-            break;
-        case "KeyZ":
-            octDown();
-            break;
-        case "KeyX":
-            octUp();
             break;
         case "KeyZ":
             octDown();
@@ -288,24 +280,4 @@ document.addEventListener('keydown', function(event) {
   function actKbOff(noteId){
     var note = document.getElementById('activeKeyboard');
     note.style.background = "#243160";
-  }
-
-  function addNotesQueue(keyId){
-    notesQueueGlobal.push(document.getElementById(keyId).innerHTML = keyId);
-    console.log(notesQueueGlobal);
-    timertrigger = 1;
-    //console.log(notesQueueGlobal.length);
-    if (timertrigger == 1) {
-        timerId = setInterval(() => deleteNotesQueue(), 1000);
-    }
-  }
-
-  function deleteNotesQueue(){
-    notesQueueGlobal.splice(0, 1);
-    console.log(notesQueueGlobal);
-    //console.log(notesQueueGlobal.length);
-    if (notesQueueGlobal[0] == null) {
-        timertrigger = 0;
-        cleclearInterval(timerId);
-    }
   }
