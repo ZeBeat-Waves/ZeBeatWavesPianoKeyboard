@@ -47,22 +47,22 @@
     stroke: #000000;
 }
 
-.keysWhite:hover{
+/* .keysWhite:hover{
     fill: #243160;
 }
 
 .keysWhite:active{
     fill: #d9114a;
-}
+} */
 
 .keysBlack{
     fill:  #000000;
     stroke: #ffffff;
 }
 
-.keysBlack:hover{
+/* .keysBlack:hover{
     fill: #243160;
-}
+} */
 
 #activeKeyboard{
     width: 10px;

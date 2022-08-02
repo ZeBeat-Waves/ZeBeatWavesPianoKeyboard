@@ -1,11 +1,11 @@
-$(document).ready(function () {
+/* $(document).ready(function () {
 
     $("#keyboard").mousemove(function(e) {
         mouseId = $(e.target).attr("id");
         console.log(mouseId);
     })
 
-  });
+  }); */
 
 var svgns = "http://www.w3.org/2000/svg";
 let timerId;
@@ -81,7 +81,7 @@ document.addEventListener('keydown', function(event) {
     switch (event.code) {
         case "KeyA":
             var key = document.getElementById('C' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -89,7 +89,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -97,7 +97,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -105,7 +105,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -113,7 +113,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -121,7 +121,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -129,7 +129,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -137,7 +137,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -145,7 +145,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -153,7 +153,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -161,7 +161,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -169,7 +169,7 @@ document.addEventListener('keydown', function(event) {
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
-            key.style.fill = '#d9114a';
+            backlight(key);
             document.getElementById('activeNote').innerHTML = key.id;
             inputNoteGlobal = key.id;
             inputNoteShow();
@@ -191,62 +191,62 @@ document.addEventListener('keydown', function(event) {
     switch (event.code) {
         case "KeyA":
             var key = document.getElementById('C' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyW":
             var key = document.getElementById('C#' + octaveKeyboardGlobal);
-            key.style.fill = '#000000';
+            backLightBlack(key)
             actKbOff(key.id);
             break;
         case "KeyS":
             var key = document.getElementById('D' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyE":
             var key = document.getElementById('D#' + octaveKeyboardGlobal);
-            key.style.fill = '#000000';
+            backLightBlack(key);
             actKbOff(key.id);
             break;
         case "KeyD":
             var key = document.getElementById('E' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyF":
             var key = document.getElementById('F' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyT":
             var key = document.getElementById('F#' + octaveKeyboardGlobal);
-            key.style.fill = '#000000';
+            backLightBlack(key)
             actKbOff(key.id);
             break;
         case "KeyG":
             var key = document.getElementById('G' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyY":
             var key = document.getElementById('G#' + octaveKeyboardGlobal);
-            key.style.fill = '#000000';
+            backLightBlack(key)
             actKbOff(key.id);
             break;
         case "KeyH":
             var key = document.getElementById('A' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         case "KeyU":
             var key = document.getElementById('A#' + octaveKeyboardGlobal);
-            key.style.fill = '#000000';
+            backLightBlack(key)
             actKbOff(key.id);
             break;
         case "KeyJ":
             var key = document.getElementById('B' + octaveKeyboardGlobal);
-            key.style.fill = '#ffffff';
+            backlightWhite(key);
             actKbOff(key.id);
             break;
         default:
@@ -280,4 +280,16 @@ document.addEventListener('keydown', function(event) {
   function actKbOff(noteId){
     var note = document.getElementById('activeKeyboard');
     note.style.background = "#243160";
+  }
+
+  function backlight(key){
+    key.style.fill = '#d9114a';
+  }
+
+  function backlightWhite(key){
+    key.style.fill = '#ffffff';
+  }
+
+  function backLightBlack(key){
+    key.style.fill = '#000000';
   }
